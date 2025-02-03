@@ -3,11 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark body {
-    background-color: #1a202c; /* Dark background color */
-    color: #cbd5e0; /* Light text color */
+
+/* ---------------------- *\ 
+ *  BASE 
+\* ---------------------- */
+
+html {
+    scroll-behavior: smooth;
 }
 
-.dark h1 {
-    color: #f7fafc; /* Light color for headings */
+body {
+    @apply bg-zinc-900 text-zinc-50
+}
+
+/* ---------------------- *\ 
+ *  Components 
+\* ---------------------- */
+
+/* menu-button */
+
+.menu-btn {
+    @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 
+    transition-[transform,background-color] active:scale-95
+}
+
+
+/* navbar */
+
+.navbar {
+    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter]
+}
+
+.navbar.active {
+    @apply opacity-100 scale-100 blur-0 visible
 }

@@ -1,5 +1,6 @@
 const flowbite = require('flowbite/plugin');
 
+
 module.exports = {
   content: [
     './index.html',
@@ -7,7 +8,11 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Inter', 'sans-serif']
+      }
+    },
   },
   darkMode: 'class',
   plugins: [

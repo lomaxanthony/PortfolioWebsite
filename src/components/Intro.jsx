@@ -6,6 +6,7 @@ function Intro() {
             <h1 className="text-4xl md:text-7xl mb-1 md:mb-3 font-bold">
                 Tony Lomax
             </h1>
+            
             <p className="text-base md:text-xl mb-3 font-medium">
                 Software Engineer & Web Developer
             </p>

@@ -6,24 +6,15 @@ import Footer from "./components/Footer";
 import Portfolio from "./components/Portfolio";
 import Timeline from "./components/Timeline";
 import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
 
   return (
     <>
       <div className="App">
-        <NavBar />
-        <div>
-          <button onClick={toggleDarkMode} className="fixed bottom-4 right-4 p-2 bg-gray-800 text-white rounded">
-            Toggle Dark Mode
-          </button>
-        </div>
+        <Header />
         <Intro />
         <Portfolio />
         <Timeline />
