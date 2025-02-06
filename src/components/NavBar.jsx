@@ -2,15 +2,39 @@
  * @copyright 2025 Anthony Lomax
  */
 
-import { Navbar } from "flowbite-react";
-import React, { useRef } from "react";
+
+import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+
 
 function NavBar ({ navOpen }) { 
 
   const lastActiveLink = useRef();
   const activeBox = useRef();
+
+
+// Navbar box highlighting  
+  const intiActiveBox = () => {
+    // update the active box and style accordingly
+    activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
+    activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
+    activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
+    activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
+  }
+
+  useEffect(intiActiveBox, []);
+  window.addEventListener('resize', intiActiveBox)
+
+  const activeCurrentLink = (event) => {
+    lastActiveLink.current?.classList.remove('active');
+    event.currentTarget.classList.add('active');
+    lastActiveLink.current = event.currentTarget;
+
+    activeBox.current.style.top = event.currentTarget.offsetTop + 'px';
+    activeBox.current.style.left = event.currentTarget.offsetLeft + 'px';
+    activeBox.current.style.width = event.currentTarget.offsetWidth + 'px';
+    activeBox.current.style.height = event.currentTarget.offsetHeight + 'px';
+  }
   
   const navItems = [
     {
@@ -50,7 +74,7 @@ function NavBar ({ navOpen }) {
           key={key}
           ref={ref}
           className={className}
-          onClick={null}        
+          onClick={activeCurrentLink}        
           >
             {label}
         </a>
@@ -60,7 +84,6 @@ function NavBar ({ navOpen }) {
         className="active-box"
         ref={activeBox}
       >
-
       </div>
     </nav>
   )
