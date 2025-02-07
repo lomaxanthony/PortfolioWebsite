@@ -23,7 +23,8 @@ function Header () {
                             src="/favicon/android-chrome-192x192.png"
                             width={40}
                             height={40}
-                            alt="terminalLogo" 
+                            alt="terminalLogo"
+                            className="rounded-lg ml-10"
                         />
                     </a>                
                 </h1>
