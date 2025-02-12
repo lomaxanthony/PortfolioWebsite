@@ -36,15 +36,7 @@ function Intro() {
                 </div>
 
                 <div>
-                    <figure>
-                        <img 
-                            src="/assets/headshot.png"
-                            width={100}
-                            height={200}
-                            alt="Tony Lomax"
-                            className="w-full" 
-                        />
-                    </figure>
+                    
                 </div>
             </div>
         </section>
